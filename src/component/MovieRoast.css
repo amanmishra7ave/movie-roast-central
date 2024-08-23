@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #e94560;
+  min-height: 100vh;
+}
+
+.movie-roast {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #e94560;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: titlePulse 2s infinite alternate;
+}
+
+@keyframes titlePulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.add-movie {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-movie input, .add-roast input, .comments-section input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1em;
+  border: 2px solid #e94560;
+  border-radius: 5px 0 0 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.add-movie input:focus, .add-roast input:focus, .comments-section input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.add-movie button, .add-roast button, .comments-section button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-movie button:hover, .add-roast button:hover, .comments-section button:hover {
+  background-color: #d64161;
+  transform: translateY(-2px);
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.movie-card {
+  width: calc(33.33% - 20px);
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.movie-card:hover, .movie-card.selected {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+}
+
+.movie-card.selected {
+  border: 2px solid #e94560;
+}
+
+.roast-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 5px;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.roast-list {
+  max-height: 500px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.roast-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.roast-card:hover {
+  transform: translateY(-3px);
+}
+
+.roast-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.roast-actions button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  color: #fff;
+}
+
+.roast-actions button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.comments-section {
+  margin-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.comments-section h4 {
+  margin-bottom: 10px;
+  color: #e94560;
+}
+
+.comments-section p {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.comments-section input {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.comments-section button {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.add-roast {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e94560;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d64161;
+}
